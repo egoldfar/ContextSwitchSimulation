@@ -100,7 +100,7 @@ public class Main {
     }
 
     private static void wakeProcesses(ArrayList<ProcessControlBlock> blocked, ArrayList<ProcessControlBlock> ready) {
-        for (int l = 0; l < blocked.size(); l++) {
+        for (int l = blocked.size()-1; l >=0; l--) {
             ProcessControlBlock p = blocked.get(l);
             int wake = random.nextInt(10);//random probability of 30%
             if (wake < 3) {
